@@ -1,0 +1,24 @@
+# Copy this file to "application-local.properties" in the SAME folder.
+# application-local.properties is gitignored (secrets stay off GitHub).
+#
+# STS note: Eclipse/STS may NOT copy gitignored files to target/classes.
+# After editing, run in terminal:  mvn compile
+# Then run the app in STS with profile: local
+
+# --- Neon "dev" branch ---
+spring.datasource.url=jdbc:postgresql://YOUR-NEON-DEV-HOST/neondb?sslmode=require
+spring.datasource.username=your_neon_user
+spring.datasource.password=your_neon_password
+
+# --- JWT (optional — application.properties has a dev default) ---
+app.jwt.secret=your-long-random-secret-here
+app.jwt.expiration-ms=86400000
+
+# --- Initial admin (created once when users table is empty) ---
+app.admin.email=your-email@gmail.com
+app.admin.password=your-admin-password
+
+# --- Dev conveniences ---
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+logging.level.org.hibernate.SQL=DEBUG
