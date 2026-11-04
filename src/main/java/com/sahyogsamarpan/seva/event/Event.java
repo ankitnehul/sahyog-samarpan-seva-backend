@@ -26,7 +26,6 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /** URL-friendly id, matches frontend WorkEvent.id (e.g. maharashtra-day-2026). */
     @Column(nullable = false, unique = true, length = 120)
     private String slug;
 
